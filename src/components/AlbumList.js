@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component }from 'react';
 import { ScrollView } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail'
@@ -14,7 +14,8 @@ state = { albums: [] };
 
   renderAlbums() {
     return this.state.albums.map(album =>
-      <AlbumDetail key={album.title} album={album} />);   // data or key can be renamed
+      <AlbumDetail key={album.title} album={album} />
+    );  
   }
 
   render() {
