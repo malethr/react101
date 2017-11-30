@@ -1,5 +1,5 @@
-import React, { Component }from 'react';
-import { View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail'
 
@@ -14,16 +14,16 @@ state = { albums: [] };
 
   renderAlbums() {
     return this.state.albums.map(album =>
-      <AlbumDetail key={album.title}>{album.title}</AlbumDetail>);
+      <AlbumDetail key={album.title} album={album} />);   // data or key can be renamed
   }
 
   render() {
     console.log(this.state);
 
     return (
-      <View>
+      <ScrollView>
         {this.renderAlbums()}
-      </View>
+      </ScrollView>
     );
   }
 }
